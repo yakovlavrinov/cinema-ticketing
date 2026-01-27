@@ -1,0 +1,9 @@
+node_modules/
+dist/
+core/
+build/
+pnpm-lock.yaml
+.env
+.DB_Store
+.vscode/
+.log
