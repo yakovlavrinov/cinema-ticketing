@@ -1,9 +1,15 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common'
+import { ApiOperation } from '@nestjs/swagger'
 
 import { SendOtpRequest } from './dto'
 
 @Controller('auth')
 export class AuthController {
+	@ApiOperation({
+		summary: 'Send otp code',
+		description:
+			'Send a verification code to the user phone number or email.'
+	})
 	@Post('otp/send')
 	@HttpCode(HttpStatus.OK)
 	public sendOtp(@Body() dto: SendOtpRequest) {
